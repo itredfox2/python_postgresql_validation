@@ -80,11 +80,11 @@ def create_connection():
     try:
         logging.info("Opening connection to {}:{}".format(db_host, db_port))
         connection = psycopg2.connect(
-	    dbname		= db_name,
-            host		= db_host,
-            user		= db_user,
-            password	= db_pass,
-            port		= db_port
+	    dbname        = db_name,
+            host          = db_host,
+            user          = db_user,
+            password      = db_pass,
+            port          = db_port
         )
         logging.info("Connection established.")
 
