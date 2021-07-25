@@ -4,12 +4,12 @@
 #                                                                                   #
 # Overview                                                                          #
 #                                                                                   #
-#	postgresql_validate.py --schema=postgresql_schema.json                      #
+#    postgresql_validate.py --schema=postgresql_schema.json                         #
 #                                                                                   #
 # Description                                                                       #
 #                                                                                   #
-#	This script is used to validate the contents of postgresql database         #
-#	as specified in the provided database schema.                               #
+#    This script is used to validate the contents of postgresql database            #
+#    as specified in the provided database schema.                                  #
 #                                                                                   #
 # Implementation                                                                    #
 #                                                                                   #
