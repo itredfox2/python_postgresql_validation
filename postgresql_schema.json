@@ -1,15 +1,14 @@
 {
-	"customers":
-	{
-		"customer_id":			{	"type": "int",			"length": "10",		"required":	"yes",		"default": "PRIMARY" },
+    "customers":
+    {
+        "customer_id":        {    "type": "int",        "length": "10",    "required":	"yes",    "default": "PRIMARY" },
 
-		"customer_name":		{	"type": "varchar", 		"length": "40", 	"required": "yes", 		"default": "" },
+        "customer_name":      {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
 
-		"description":			{	"type": "varchar",      "length": "100",    "required": "yes",      "default": "" },
+        "description":        {    "type": "varchar",    "length": "100",   "required": "yes",    "default": "" },
 
-		"country":				{	"type": "varchar",      "length": "40",     "required": "yes",      "default": "" },
+        "country":            {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
 
-		"region":             	{   "type": "varchar",      "length": "40",     "required": "yes",      "default": "" }
-	}
-
+        "region":             {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" }
+    }
 }
