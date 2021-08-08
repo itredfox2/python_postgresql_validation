@@ -11,4 +11,20 @@
 
         "region":             {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" }
     }
+    
+    "symbols":
+    {
+        "symbol":               {    "type": "varchar",    "length": "10",    "required":   "yes",  "default": "PRIMARY" },
+
+        "company":              {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
+
+        "last_sale":            {    "type": "double",     "length": "10",   "required": "yes",     "default": "" },
+
+        "net_change":           {    "type": "double",     "length": "10",    "required": "yes",    "default": "" },
+
+        "percent_change":       {    "type": "double",     "length": "10",    "required": "yes",    "default": "" },
+
+        "market_cap":           {    "type": "double",     "length": "20",    "required": "yes",    "default": "" }
+
+    }
 }
