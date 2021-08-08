@@ -10,7 +10,7 @@
         "country":            {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
 
         "region":             {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" }
-    }
+    },
     
     "symbols":
     {
