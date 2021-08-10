@@ -175,6 +175,8 @@ def value_error(field, value):
 # Main              #
 #####################
 
+def main():
+
     logging.info("Starting validation of postgresql database.")
 
     db_conn = create_connection()
