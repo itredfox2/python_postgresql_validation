@@ -90,7 +90,7 @@ def create_connection():
         logging.info("Opening connection to {}:{}".format(db_host, db_port))
 	
         connection = psycopg2.connect(
-	    dbname        = db_name,
+    	    dbname        = db_name,
             host          = db_host,
             user          = db_user,
             password      = db_pass,
