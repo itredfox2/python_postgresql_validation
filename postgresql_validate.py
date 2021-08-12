@@ -1,5 +1,3 @@
-#!/Library/Frameworks/Python.framework/Versions/3.5/bin/python3.5
-
 #####################################################################################
 #                                                                                   #
 # Overview                                                                          #
@@ -174,6 +172,8 @@ def value_error(field, value):
 #####################
 # Main              #
 #####################
+
+def main():
 
     logging.info("Starting validation of postgresql database.")
 
