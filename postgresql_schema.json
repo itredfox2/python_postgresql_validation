@@ -1,14 +1,17 @@
 {
-    "customers":
+    "symbols":
     {
-        "customer_id":        {    "type": "int",        "length": "10",    "required":	"yes",    "default": "PRIMARY" },
+        "symbol":               {    "type": "varchar",    "length": "10",    "required":	"yes",  "default": "PRIMARY" },
 
-        "customer_name":      {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
+        "company":              {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
 
-        "description":        {    "type": "varchar",    "length": "100",   "required": "yes",    "default": "" },
+        "last_sale":            {    "type": "double",     "length": "10",   "required": "yes",     "default": "" },
 
-        "country":            {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
+        "net_change":           {    "type": "double",     "length": "10",    "required": "yes",    "default": "" },
 
-        "region":             {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" }
+        "percent_change":       {    "type": "double",     "length": "10",    "required": "yes",    "default": "" },
+
+		"market_cap":           {    "type": "double",     "length": "20",    "required": "yes",    "default": "" }
+
     }
 }
