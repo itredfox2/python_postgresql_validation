@@ -27,6 +27,7 @@ import json
 import logging
 import psycopg2
 import re
+from validator import Validator
 
 #####################
 # Connection        #
@@ -136,38 +137,6 @@ def close_connection(connection):
 	
         logging.error(E)
 
-def check_int(field, value):
-    '''checks if the field is an integer'''
-
-    if isinstance(value, int):
-        pass
-
-    else:
-        value_error(field, value)
-
-def check_string(field, value, length):
-    '''checks if the field length exceeds the expected length of characters'''
-
-    if len(value) <= length:
-        pass
-
-    else:
-        value_error(field, value)
-
-def check_timestamp(field, value):
-    '''checks if the field has a timestamp value'''
-
-    if isistance(value, datatime.datetime):
-        pass
-
-    else:
-        value_error(field, value)
-
-def value_error(field, value):
-    '''logs as error if a value does not match the field specifications as listed in the database schema'''
-
-    logging.error("invalid value detected for column {}: \'{}\'".format(field, value))
-
 #####################
 # Main              #
 #####################
@@ -201,23 +170,23 @@ def main():
 
                         if schema[table][col]["required"] == "yes":
 				
-                            value_error(col, value)
+                            validator.value_error(col, value)
 
                     else:
 			
                         if schema[table][col]["type"] == "int":
 				
-                            check_int(col, value)
+                            validator.check_int(col, value)
 
                         elif schema[table][col]["type"] == "varchar":
 				
                             length = int(schema[table][col]["length"])
 			
-                            check_string(col, value, length)
+                            validator.check_string(col, value, length)
 
-                        elif schema[table][col]["type"] == "timestamp":
+                        elif schema[table][col]["type"] == "float":
 				
-                            check_timestamp(col, value)
+                            validator.check_float(col, value)
 
                 except (Exception, IndexError) as E:
 			
