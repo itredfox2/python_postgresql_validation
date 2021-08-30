@@ -7,15 +7,13 @@
 
         "company":              {    "type": "varchar",    "length": "40",    "required": "yes",    "default": "" },
 
-        "last_sale":            {    "type": "double",     "length": "10",    "required": "yes",    "default": "" },
+        "last_sale":            {    "type": "float",      "length": "10",    "required": "yes",    "default": "" },
 
-        "last_trade_date":      {    "type": "date",       "length": "8",     "required": "yes",    "default": "" },
+        "net_change":           {    "type": "float",      "length": "10",    "required": "yes",    "default": "" },
 
-        "net_change":           {    "type": "double",     "length": "10",    "required": "yes",    "default": "" },
+        "percent_change":       {    "type": "float",      "length": "10",    "required": "yes",    "default": "" },
 
-        "percent_change":       {    "type": "double",     "length": "10",    "required": "yes",    "default": "" },
-
-        "market_cap":           {    "type": "double",     "length": "20",    "required": "yes",    "default": "" }
+        "market_cap":           {    "type": "float",      "length": "20",    "required": "yes",    "default": "" }
 
     }
 }
