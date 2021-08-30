@@ -6,9 +6,8 @@
 #                                                                                   #
 # Description                                                                       #
 #                                                                                   #
-#    This script is used to validate the attributes of fields                       #
-#    in a postgresql database, as specificed in the provided                        #
-#    database schema.                                                               #
+#    This script is used to validate the attributes of fields in postgresql         #
+#    database, as specificed in the provided database schema.                       #
 #                                                                                   #
 # Implementation                                                                    #
 #                                                                                   #
