@@ -2,7 +2,6 @@
 # Imports           #
 #####################
 
-import datetime
 import unittest
 from validator import Validator
 
