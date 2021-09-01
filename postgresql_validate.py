@@ -138,7 +138,8 @@ def close_connection(connection):
         logging.error(E)
 	
 def validate_table(table):
-	
+    '''validate the attributes of fields in postgresql table'''
+
     logging.info("Running checks for table {}".format(table))
 
     columns = list(schema[table])
