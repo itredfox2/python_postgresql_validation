@@ -2,7 +2,7 @@
 #                                                                                   #
 # Overview                                                                          #
 #                                                                                   #
-#    postgresql_validate.py --schema=postgresql_schema.json                         #
+#    main.py --schema=postgresql_schema.json                                        #
 #                                                                                   #
 # Description                                                                       #
 #                                                                                   #
