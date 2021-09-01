@@ -136,7 +136,51 @@ def close_connection(connection):
     except(Exception, psycopg2.Error) as E:
 	
         logging.error(E)
+	
+def validate_table(table):
+	
+    logging.info("Running checks for table {}".format(table))
 
+    columns = list(schema[table])
+
+    query "SELECT * FROM {} ;".format(table)
+
+    results = execute_query(db_conn, query)
+	
+    for row_index, row in enumerate(results):
+
+        for col_index, value in enumerate(list(row)):
+
+            try:
+                col = columns[col_index]
+
+                if value is None:
+
+                    if schema[table][col]["required"] == "yes":
+				
+                        validator.value_error(col, value)
+                else:
+			
+                    if schema[table][col]["type"] == "int":
+				
+                        validator.check_int(col, value)
+
+                    elif schema[table][col]["type"] == "varchar":
+				
+                        length = int(schema[table][col]["length"])
+			
+                        validator.check_string(col, value, length)
+
+                    elif schema[table][col]["type"] == "float":
+				
+                        validator.check_float(col, value)
+
+            except (Exception, IndexError) as E:
+			
+                logging.error(E)
+		
+                pass
+	
 #####################
 # Main              #
 #####################
@@ -151,48 +195,7 @@ def main():
 
     for table in schema:
 
-        logging.info("Running checks for table {}".format(table))
-
-        columns = list(schema[table])
-
-        query "SELECT * FROM {} ;".format(table)
-
-        results = execute_query(db_conn, query)
-
-        for row_index, row in enumerate(results):
-
-            for col_index, value in enumerate(list(row)):
-
-                try:
-                    col = columns[col_index]
-
-                    if value is None:
-
-                        if schema[table][col]["required"] == "yes":
-				
-                            validator.value_error(col, value)
-
-                    else:
-			
-                        if schema[table][col]["type"] == "int":
-				
-                            validator.check_int(col, value)
-
-                        elif schema[table][col]["type"] == "varchar":
-				
-                            length = int(schema[table][col]["length"])
-			
-                            validator.check_string(col, value, length)
-
-                        elif schema[table][col]["type"] == "float":
-				
-                            validator.check_float(col, value)
-
-                except (Exception, IndexError) as E:
-			
-                    logging.error(E)
-		
-                    pass
+        validate_table(table)
 
     close_connection(db_conn)
 
